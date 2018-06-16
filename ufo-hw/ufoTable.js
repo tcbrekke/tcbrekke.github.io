@@ -24,18 +24,18 @@ function addItem(row, text) {
 
 };
 // Render table with all entries if no filters have been specified
-if (!stateFilterInput) {
-	console.log("filterInput has no value");
-	if (!dateInput) {
-		console.log("dateInput has no value");
-		if (!cityFilterInput) {
-			console.log("cityFilterInput has no value");
-			if (!countryFilterInput) {
-				console.log("countryFilterInput has no value");
-				renderTable(ufoData);
-			}
-		}
-	}
+// if (!stateFilterInput) {
+// 	console.log("filterInput has no value");
+if (!dateInput) {
+	console.log("dateInput has no value");
+	// 	if (!cityFilterInput) {
+	// 		console.log("cityFilterInput has no value");
+	// 		if (!countryFilterInput) {
+	// 			console.log("countryFilterInput has no value");
+	// 			renderTable(ufoData);
+	// 		}
+	// 	}
+	// }
 }
 
 function filterByDate(date) {
@@ -47,32 +47,32 @@ function filterByDate(date) {
 	})
 }
 
-function filterByCountry(country) {
-	var country = country;
-	filteredArray = ufoData.filter(function(cObj) { 
-		var checkForCountry = (cObj.country).value.trim().toLowerCase();
-		console.log(checkForCountry);
-		return checkForCountry === country;
-	})
-}
+// function filterByCountry(country) {
+// 	var country = country;
+// 	filteredArray = ufoData.filter(function(cObj) { 
+// 		var checkForCountry = (cObj.country).value.trim().toLowerCase();
+// 		console.log(checkForCountry);
+// 		return checkForCountry === country;
+// 	})
+// }
 
-function filterByState(state) {
-	var state = state;
-	filteredArray = ufoData.filter(function(cObj) { 
-		var checkForState = (cObj.state).value.trim().toLowerCase();
-		console.log(checkForState);
-		return checkForState === state;
-	})
-}
+// function filterByState(state) {
+// 	var state = state;
+// 	filteredArray = ufoData.filter(function(cObj) { 
+// 		var checkForState = (cObj.state).value.trim().toLowerCase();
+// 		console.log(checkForState);
+// 		return checkForState === state;
+// 	})
+// }
 
-function filterByCity(city) {
-	var city = city;
-	filteredArray = ufoData.filter(function(cObj) { 
-		var checkForCity = (cObj.city).value.trim().toLowerCase();
-		console.log(checkForCity);
-		return checkForCity === city;
-	})
-}
+// function filterByCity(city) {
+// 	var city = city;
+// 	filteredArray = ufoData.filter(function(cObj) { 
+// 		var checkForCity = (cObj.city).value.trim().toLowerCase();
+// 		console.log(checkForCity);
+// 		return checkForCity === city;
+// 	})
+// }
 // function filterByDate(date) {
 // 	for (var i = 0; i < ufoData.length; i++) {
 // 		var currentDate = new Date(ufoData[i].datetime).toString().slice(0, 15);
@@ -104,9 +104,9 @@ function filterByCity(city) {
 
 function handleFilterSubmit(event) {
 	dateInput = new Date(document.querySelector("#date-input").value);
-	stateFilterInput = document.querySelector("#state-filter-input").value.trim().toLowerCase();
-	cityFilterInput = document.querySelector("#city-filter-input").value.trim().toLowerCase();
-	countryFilterInput = document.querySelector("#country-filter-input").value.trim().toLowerCase();
+	// stateFilterInput = document.querySelector("#state-filter-input").value.trim().toLowerCase();
+	// cityFilterInput = document.querySelector("#city-filter-input").value.trim().toLowerCase();
+	// countryFilterInput = document.querySelector("#country-filter-input").value.trim().toLowerCase();
 	event.preventDefault();
 	if (dateInput) {
 		var simpleDate = new Date(dateInput).toUTCString().slice(0, 16);
